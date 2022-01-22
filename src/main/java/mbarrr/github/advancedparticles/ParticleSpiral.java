@@ -29,12 +29,12 @@ public class ParticleSpiral {
             @Override
             public void run() {
                 if(pointOnCircle.getZ() < -1){
-                    thing=-1;
+                    thing*=-1;
                     otherThing = -1;
                 }
 
                 else if(pointOnCircle.getZ() > 1){
-                    thing=-1;
+                    thing*=-1;
                     otherThing = 1;
                 }
 
