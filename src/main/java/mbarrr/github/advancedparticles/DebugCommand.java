@@ -1,5 +1,6 @@
 package mbarrr.github.advancedparticles;
 
+import mbarrr.github.advancedparticles.ParticleStructures.Circles.Orbs.FollowerParticleOrb;
 import org.bukkit.Color;
 import org.bukkit.Particle;
 import org.bukkit.command.Command;
@@ -12,11 +13,12 @@ public class DebugCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player) sender;
 
-        Particle.DustOptions dustOptions = new Particle.DustOptions(Color.fromRGB(0, 127, 155), 2.0F);
+        Particle.DustOptions dustOptions = new Particle.DustOptions(Color.fromRGB(0, 255, 0), 2.0F);
 
-        ParticleCircle particleCircle = new ParticleCircle(AdvancedParticles.getInstance(), 1, Double.parseDouble(args[0]), player, dustOptions);
+        FollowerParticleOrb particleOrb = new FollowerParticleOrb(AdvancedParticles.getInstance(), 1, Double.parseDouble(args[0]), player, dustOptions, 0, 2, 0.05);
+        particleOrb.start();
 
-        particleCircle.start();
+
 
 
         return false;
