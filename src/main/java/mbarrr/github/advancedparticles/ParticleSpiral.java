@@ -22,20 +22,15 @@ public class ParticleSpiral {
 
 
         Location pointOnCircle = new Location(player.getWorld(), 0,0, radius);
-        thing = 0.1;
+        thing = radius/10;
         otherThing = 1;
 
         bukkitRunnable = new BukkitRunnable() {
             @Override
             public void run() {
-                if(pointOnCircle.getZ() < -1){
+                if(pointOnCircle.getZ() < -radius || pointOnCircle.getZ() > radius){
                     thing*=-1;
-                    otherThing = -1;
-                }
-
-                else if(pointOnCircle.getZ() > 1){
-                    thing*=-1;
-                    otherThing = 1;
+                    otherThing*= -1;
                 }
 
                 pointOnCircle.subtract(0,0,thing);
