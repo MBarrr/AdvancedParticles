@@ -5,8 +5,8 @@ import org.bukkit.*;
 import org.bukkit.plugin.Plugin;
 
 public class ParticleCircle extends ParticleStructure {
-    public ParticleCircle(Plugin instance, long period, double radius, Location location, Particle.DustOptions dustOptions) {
-        super(instance, period, radius, location.getWorld(), dustOptions, location);
+    public ParticleCircle(Plugin instance, long period, double radius, Location location, Particle.DustOptions dustOptions, int startPointPosOrNeg) {
+        super(instance, period, radius, location.getWorld(), dustOptions, location, startPointPosOrNeg);
     }
 
     @Override

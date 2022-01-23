@@ -11,8 +11,8 @@ public class ParticleOrb extends ParticleCircle {
     double ceiling; //maximum y distance
     double yIncrement; //amount to increment Y by
 
-    public ParticleOrb(Plugin instance, long period, double radius, Location location, Particle.DustOptions dustOptions, double floor, double ceiling, double yIncrement) {
-        super(instance, period, radius, location, dustOptions);
+    public ParticleOrb(Plugin instance, long period, double radius, Location location, Particle.DustOptions dustOptions, double floor, double ceiling, double yIncrement, int startPointPosOrNeg) {
+        super(instance, period, radius, location, dustOptions, startPointPosOrNeg);
         this.floor = floor;
         this.ceiling = ceiling;
         this.yIncrement = yIncrement;

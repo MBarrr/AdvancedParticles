@@ -21,24 +21,28 @@ public class ParticleStructure {
     public double xIncrement; //amount to increment X by
     public double multiplier; // 1 or -1
     public Location point; //our point to work with
+    public int startPointPosOrNeg;
 
-    public ParticleStructure(Plugin instance, long period, double radius, World world, Particle.DustOptions dustOptions, Location centerPoint){
+    public ParticleStructure(Plugin instance, long period, double radius, World world, Particle.DustOptions dustOptions, Location centerPoint, int startPointPosOrNeg){
+        this.startPointPosOrNeg = startPointPosOrNeg;
         this.centerPoint = centerPoint;
         this.dustOptions = dustOptions;
         this.instance = instance;
         this.world = world;
         this.period = period;
         this.radius = radius;
-
-        xIncrement = -radius / 10;
         multiplier = 1;
-        point = new Location(world, 0, 0, radius);
-
-        load();
+        loadParams();
+        loadRunnable();
     }
 
     //prepare the loop to run whateever is in onTick
-    private void load(){
+    public void loadParams(){
+        xIncrement = radius / 10 *startPointPosOrNeg;
+        point = new Location(world, 0, 0, radius*startPointPosOrNeg);
+    }
+
+    public void loadRunnable(){
         bukkitRunnable = new BukkitRunnable() {
             @Override
             public void run() {
@@ -55,7 +59,6 @@ public class ParticleStructure {
         }
 
         point.add(0, 0, xIncrement);
-
         setX();
         setY();
         changeParticleSettings();
@@ -64,17 +67,11 @@ public class ParticleStructure {
         world.spawnParticle(Particle.REDSTONE, centerPoint.clone().add(point), 1, dustOptions);
     }
 
-    public void setX(){
+    public void setX(){}
 
-    }
+    public void setY(){}
 
-    public void setY(){
-
-    }
-
-    public void changeParticleSettings(){
-
-    }
+    public void changeParticleSettings(){}
 
     //start the loop
     public void start(){
@@ -85,5 +82,4 @@ public class ParticleStructure {
     public void stop(){
         bukkitRunnable.cancel();
     }
-
 }
