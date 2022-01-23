@@ -34,7 +34,7 @@ public class ParticleSquareCorner extends ParticleStructure {
         setX();
         setY();
 
-        instance.getServer().broadcastMessage(point.getX() + " " + point.getY() + " " + point.getZ());
+        //instance.getServer().broadcastMessage(point.getX() + " " + point.getY() + " " + point.getZ());
         world.spawnParticle(Particle.REDSTONE, centerPoint.clone().add(point), 1, dustOptions);
         world.spawnParticle(Particle.REDSTONE, centerPoint.clone().add(point2), 1, dustOptions);
 
