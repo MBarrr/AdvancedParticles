@@ -36,7 +36,6 @@ public class WeirdTriangleSpellThing extends ParticleStructure {
         setY();
         changeParticleSettings();
 
-        instance.getServer().broadcastMessage(point.getX() + " " + point.getY() + " " + point.getZ());
         world.spawnParticle(Particle.REDSTONE, centerPoint.clone().add(point), 1, dustOptions);
         world.spawnParticle(Particle.REDSTONE, centerPoint.clone().add(point2), 1, dustOptions);
 
