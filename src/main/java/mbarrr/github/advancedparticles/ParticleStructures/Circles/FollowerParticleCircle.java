@@ -2,7 +2,6 @@ package mbarrr.github.advancedparticles.ParticleStructures.Circles;
 
 import org.bukkit.Particle;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 public class FollowerParticleCircle extends ParticleCircle{

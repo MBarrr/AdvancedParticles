@@ -1,6 +1,6 @@
 package mbarrr.github.advancedparticles;
 
-import mbarrr.github.advancedparticles.ParticleStructures.Squares.ParticleSquareCorner;
+import mbarrr.github.advancedparticles.ParticleStructures.Circles.FollowerParticleCircle;
 import org.bukkit.Color;
 import org.bukkit.Particle;
 import org.bukkit.command.Command;
@@ -15,9 +15,9 @@ public class DebugCommand implements CommandExecutor {
 
         Particle.DustOptions dustOptions = new Particle.DustOptions(Color.fromRGB(0, 255, 0), 1.0F);
 
-        ParticleSquareCorner particleOrb = new ParticleSquareCorner(AdvancedParticles.getInstance(), 1, Double.parseDouble(args[0]), dustOptions, entity.getLocation(),-1);
+        FollowerParticleCircle thing1 = new FollowerParticleCircle(AdvancedParticles.getInstance(), 1, Double.parseDouble(args[0])/2, entity,dustOptions,-1);
+        thing1.start();
 
-        particleOrb.start();
 
 
 

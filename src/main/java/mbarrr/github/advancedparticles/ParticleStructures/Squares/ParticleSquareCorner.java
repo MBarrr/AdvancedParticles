@@ -5,7 +5,6 @@ import mbarrr.github.advancedparticles.ParticleStructures.ParticleStructure;
 import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.util.Vector;
 
 public class ParticleSquareCorner extends ParticleStructure {
 
